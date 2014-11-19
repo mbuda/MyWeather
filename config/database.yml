@@ -1,0 +1,16 @@
+development: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: myweather
+  password: weee9
+  timeout: 5000
+  database: weather_dev
+
+test:
+  <<: *default
+  database: weather_test
+
+production:
+  <<: *default
+  database: weather_prod
