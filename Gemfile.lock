@@ -59,6 +59,8 @@ GEM
     mime-types (1.25.1)
     minitest (5.4.3)
     multi_json (1.10.1)
+    open-weather (0.10.0)
+      json
     pg (0.17.1)
     polyglot (0.3.5)
     rack (1.5.2)
@@ -145,6 +147,7 @@ DEPENDENCIES
   factory_girl_rails
   jbuilder (~> 2.0)
   jquery-rails
+  open-weather
   pg
   rails (= 4.1.0)
   rspec-rails (~> 3.1.0)
