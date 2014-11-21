@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'home/index'
+  match '/weather', to: 'home#weather', via: [:get]
 
   root 'home#index'
 end

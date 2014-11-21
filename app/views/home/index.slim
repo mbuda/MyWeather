@@ -1,0 +1,5 @@
+= form_tag weather_path, method: :get do
+  = label_tag :city, 'Miasto'
+  = text_field_tag :city, params[:city]
+  = submit_tag 'Szukaj'
+
