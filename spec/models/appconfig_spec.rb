@@ -3,8 +3,9 @@ require 'rails_helper'
 describe AppConfig do
   subject(:app_config) { build(:app_config) }
 
-  it { should validate_presence_of(:units) }
+  it { should validate_presence_of(:name) }
 
+  it { should validate_presence_of(:units) }
   it do
     should validate_inclusion_of(:units).
       in_array(%w(internal metric imperial))
