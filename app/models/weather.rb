@@ -11,6 +11,10 @@ class Weather
     @ow['main']['temp']
   end
 
+  def wind_speed
+    @ow['wind']['speed']
+  end
+
   private
   def conf
     AppConfig.last
