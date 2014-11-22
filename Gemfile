@@ -15,6 +15,7 @@ gem 'spring',        group: :development
 gem 'open-weather'
 gem 'googlestaticmap'
 gem 'font-awesome-rails'
+gem 'twitter-bootstrap-rails'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.1.0'
