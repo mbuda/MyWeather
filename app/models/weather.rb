@@ -3,8 +3,8 @@ require 'open_weather'
 class Weather
   def initialize(city)
     @ow = OpenWeather::Current.city(city + ', ' + conf.country,
-                                    units: units,
-                                    lang: conf.language)
+                                      lang: conf.language,
+                                      units: units)
   end
 
   def temp
@@ -46,6 +46,10 @@ class Weather
     else
       'error'
     end
+  end
+
+  def description
+    @ow['weather'].first['description']
   end
 
   private

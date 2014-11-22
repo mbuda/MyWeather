@@ -1,6 +1,8 @@
 h2 You've searched for weather in
 h1= params[:city].capitalize
 
+p= @weather.description
+
 h5 Temperature:
 p= @weather.temp
 
