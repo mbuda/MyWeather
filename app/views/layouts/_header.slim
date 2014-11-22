@@ -1,4 +1,8 @@
-= form_tag weather_path, method: :get do
-  = label_tag :city, 'Weather for: '
-  = text_field_tag :city, params[:city]
-  = submit_tag 'CHECK'
+.navbar.navbar-default
+  .navbar-header
+    a.navbar-brand href='/' title='Home' MyWeather
+  .navbar-form.navbar-right
+    = form_tag weather_path, method: :get do
+      = label_tag :city, 'Weather for', class: 'control-label'
+      = text_field_tag :city, params[:city], placeholder: 'City', class: 'form-control'
+      = submit_tag 'CHECK', class: 'btn btn-primary'

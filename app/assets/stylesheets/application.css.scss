@@ -1,5 +1,7 @@
 @import 'home';
 @import 'font-awesome';
+@import 'bootstrap.min';
+@import 'bootstrap_and_overrides';
 
 html, body {
   margin: 0;
@@ -10,15 +12,6 @@ html, body {
 .wrapper {
   min-height: 100%;
   position: relative;
-}
-
-.header {
-  padding: 10px;
-}
-
-.main-content {
-  padding: 10px;
-  padding-bottom: 50px;
 }
 
 #footer {
