@@ -54,9 +54,16 @@ class Weather
     @ow['weather'].first['description']
   end
 
+  def icon
+    i = @ow['weather'].first['icon']
+
+    return 'http://www.openweathermap.org/img/w/' + i + '.png'
+  end
+
   def map
     location = MapLocation.new(address: @city + ', ' + conf.country)
-    map = GoogleStaticMap.new(zoom: 10, center: location)
+    map = GoogleStaticMap.new(zoom: 11, center: location)
+    map.markers << MapMarker.new(icon: icon, location: location)
     image_url = map.url(:auto)
 
     return image_url
