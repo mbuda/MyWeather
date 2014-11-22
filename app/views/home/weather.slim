@@ -1,32 +1,36 @@
 h2 You've searched for weather in
 h1= params[:city].capitalize
 
-p= @weather.description
+- if @weather.cod == '404'
+  h3 There is no such city
 
-h5 Temperature:
-p= @weather.temp
+- else
+  p= @weather.description
 
-h5 Wind direction and speed:
-p
-  - if @weather.wind_direction == 'N'
-    i.fa.fa-arrow-up
-  - elsif @weather.wind_direction == 'NE'
-    i.fa.fa-arrow-up.fa-rotate-45
-  - elsif @weather.wind_direction == 'E'
-    i.fa.fa-arrow-right
-  - elsif @weather.wind_direction == 'SE'
-    i.fa.fa-arrow-right.fa-rotate-45
-  - elsif @weather.wind_direction == 'S'
-    i.fa.fa-arrow-down
-  - elsif @weather.wind_direction == 'SW'
-    i.fa.fa-arrow-down.fa-rotate-45
-  - elsif @weather.wind_direction == 'W'
-    i.fa.fa-arrow-left
-  - elsif @weather.wind_direction == 'NW'
-    i.fa.fa-arrow-left.fa-rotate-45
-  - else
-    i.fa.fa-warning
+  h5 Temperature:
+  p= @weather.temp
 
-  = ' ' + @weather.wind_speed
+  h5 Wind direction and speed:
+  p
+    - if @weather.wind_direction == 'N'
+      i.fa.fa-arrow-up
+    - elsif @weather.wind_direction == 'NE'
+      i.fa.fa-arrow-up.fa-rotate-45
+    - elsif @weather.wind_direction == 'E'
+      i.fa.fa-arrow-right
+    - elsif @weather.wind_direction == 'SE'
+      i.fa.fa-arrow-right.fa-rotate-45
+    - elsif @weather.wind_direction == 'S'
+      i.fa.fa-arrow-down
+    - elsif @weather.wind_direction == 'SW'
+      i.fa.fa-arrow-down.fa-rotate-45
+    - elsif @weather.wind_direction == 'W'
+      i.fa.fa-arrow-left
+    - elsif @weather.wind_direction == 'NW'
+      i.fa.fa-arrow-left.fa-rotate-45
+    - else
+      i.fa.fa-warning
 
-img src=@weather.map
+    = ' ' + @weather.wind_speed
+
+  img src=@weather.map

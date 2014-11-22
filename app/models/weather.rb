@@ -9,6 +9,10 @@ class Weather
     @city = city
   end
 
+  def cod
+    @ow['cod']
+  end
+
   def temp
     t = @ow['main']['temp'].to_s
 
