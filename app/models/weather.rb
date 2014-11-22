@@ -1,10 +1,12 @@
 require 'open_weather'
+require 'googlestaticmap'
 
 class Weather
   def initialize(city)
     @ow = OpenWeather::Current.city(city + ', ' + conf.country,
                                       lang: conf.language,
                                       units: units)
+    @city = city
   end
 
   def temp
@@ -50,6 +52,14 @@ class Weather
 
   def description
     @ow['weather'].first['description']
+  end
+
+  def map
+    location = MapLocation.new(address: @city + ', ' + conf.country)
+    map = GoogleStaticMap.new(zoom: 10, center: location)
+    image_url = map.url(:auto)
+
+    return image_url
   end
 
   private
