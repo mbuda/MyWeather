@@ -1,36 +1,40 @@
-h2 You've searched for weather in
-h1= params[:city].capitalize
+.row
+  .col.xs-12.col-md-6
+    h2 You've searched for weather in
+    h1= params[:city].capitalize
 
-- if @weather.cod == '404'
-  h3 There is no such city
+    - if @weather.cod == '404'
+      h3 There is no such city
 
-- else
-  p= @weather.description
-
-  h5 Temperature:
-  p= @weather.temp
-
-  h5 Wind direction and speed:
-  p
-    - if @weather.wind_direction == 'N'
-      i.fa.fa-arrow-up
-    - elsif @weather.wind_direction == 'NE'
-      i.fa.fa-arrow-up.fa-rotate-45
-    - elsif @weather.wind_direction == 'E'
-      i.fa.fa-arrow-right
-    - elsif @weather.wind_direction == 'SE'
-      i.fa.fa-arrow-right.fa-rotate-45
-    - elsif @weather.wind_direction == 'S'
-      i.fa.fa-arrow-down
-    - elsif @weather.wind_direction == 'SW'
-      i.fa.fa-arrow-down.fa-rotate-45
-    - elsif @weather.wind_direction == 'W'
-      i.fa.fa-arrow-left
-    - elsif @weather.wind_direction == 'NW'
-      i.fa.fa-arrow-left.fa-rotate-45
     - else
-      i.fa.fa-warning
+      h5 Description:
+      p= @weather.description
 
-    = ' ' + @weather.wind_speed
+      h5 Temperature:
+      p= @weather.temp
 
-  img src=@weather.map
+      h5 Wind direction and speed:
+      p
+        - if @weather.wind_direction == 'N'
+          i.fa.fa-arrow-up
+        - elsif @weather.wind_direction == 'NE'
+          i.fa.fa-arrow-up.fa-rotate-45
+        - elsif @weather.wind_direction == 'E'
+          i.fa.fa-arrow-right
+        - elsif @weather.wind_direction == 'SE'
+          i.fa.fa-arrow-right.fa-rotate-45
+        - elsif @weather.wind_direction == 'S'
+          i.fa.fa-arrow-down
+        - elsif @weather.wind_direction == 'SW'
+          i.fa.fa-arrow-down.fa-rotate-45
+        - elsif @weather.wind_direction == 'W'
+          i.fa.fa-arrow-left
+        - elsif @weather.wind_direction == 'NW'
+          i.fa.fa-arrow-left.fa-rotate-45
+        - else
+          i.fa.fa-warning
+
+        = ' ' + @weather.wind_speed
+
+  .col-xs-12.col-md-6
+    img src=@weather.map
