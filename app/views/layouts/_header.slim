@@ -1,4 +1,8 @@
 .navbar.navbar-default
+  - if current_user
+    p= 'Logged in as ' + current_user.nick
+  - else
+    p You're not logged in
   .navbar-header
     a.navbar-brand href='/' title='Home' MyWeather
   .navbar-form.navbar-right
@@ -6,3 +10,18 @@
       = label_tag :city, 'Weather for', class: 'control-label'
       = text_field_tag :city, params[:city], placeholder: 'City', class: 'form-control'
       = submit_tag 'CHECK', class: 'btn btn-primary'
+
+  .navbar-collapse.collapse.navbar-responsive-collapse
+    ul.nav.navbar-nav
+      li.dropdown
+        a.dropdown-toggle href='#' data-toggle='dropdown' aria-expanded='false' Actions
+        ul.dropdown-menu
+          - if current_user
+            li
+              a href='/logout' Log out
+          - else
+            li
+              a href='/login' Log in
+            li
+              a href='/signup' Sign up
+

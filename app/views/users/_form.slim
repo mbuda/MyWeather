@@ -1,0 +1,20 @@
+= simple_form_for @user do |f|
+  - if @user.errors.any?
+    .alert.alert-danger
+      h2 Form is invalid
+      ul
+        - @user.errors.full_messages.each do |msg|
+          li= msg
+
+  .form-group.col-md-7.col-xs-7
+    = f.label :nick, class: 'control-label'
+    = f.text_field :nick, class: 'form-control', required: true
+  .form-group.col-md-6.col-xs-6
+    = f.label :password, class: 'control-label'
+    = f.password_field :password, class: 'form-control', required: true
+  .form-group.col-md-6.col-xs-6
+    = f.label :password_confirmation, class: 'control-label'
+    = f.password_field :password_confirmation, class: 'form-control', required: true
+
+  .actions.col-md-12.col-xs-12
+    = f.submit 'Sign up', class: 'btn btn-primary'
