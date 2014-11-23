@@ -1,5 +1,5 @@
 .row
-  .col.xs-12.col-md-6
+  .col.xs-12.col-md-6.text-right
     h2 You've searched for weather in
     h1= params[:city].capitalize
 
@@ -8,13 +8,13 @@
 
     - else
       h5 Description:
-      p= @weather.description
+      h4= @weather.description
 
       h5 Temperature:
-      p= @weather.temp
+      h4= @weather.temp
 
       h5 Wind direction and speed:
-      p
+      h4
         - if @weather.wind_direction == 'N'
           i.fa.fa-arrow-up
         - elsif @weather.wind_direction == 'NE'
