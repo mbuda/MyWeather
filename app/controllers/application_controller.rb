@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  before_filter :set_request_environment
+
   protect_from_forgery with: :exception
 
   private
@@ -13,5 +15,9 @@ class ApplicationController < ActionController::Base
       flash[:alert] = 'You are not allowed here without login in'
       redirect_to login_url
     end
+  end
+
+  def set_request_environment
+    User.current = current_user
   end
 end

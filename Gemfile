@@ -17,6 +17,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'open-weather'
 gem 'googlestaticmap'
+gem 'country_select', github: 'stefanpenner/country_select'
 gem 'font-awesome-rails'
 gem 'twitter-bootstrap-rails'
 gem 'webmock', group: :test

@@ -74,8 +74,16 @@ class Weather
   end
 
   private
+  def current_user
+    User.current || nil
+  end
+
   def conf
-    AppConfig.last
+    if current_user && current_user.app_config != nil
+      current_user.app_config
+    else
+      AppConfig.first
+    end
   end
 
   def units
