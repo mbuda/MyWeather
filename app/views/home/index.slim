@@ -1,1 +1,18 @@
-p MyWeather is an app for checking weather in city choosen by you
+h2 About MyWeather
+
+p You can check current weather for city choosen by you.
+  Simply write name of city that you want(it must be placed in country that is set in app configuration) and look at its current weather.
+
+p Application is using two external APIs:
+ul
+  li OpenWeatherMap API
+  li GoogleStaticMaps API
+
+p
+  | Current app configuration is:
+p
+  | Country:
+  strong= ' ' + @app_config.country
+p
+  | Units:
+  strong= ' ' + @app_config.units
