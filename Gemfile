@@ -18,8 +18,12 @@ gem 'font-awesome-rails'
 gem 'twitter-bootstrap-rails'
 
 group :development, :test do
+  gem 'sinatra'
   gem 'rspec-rails', '~> 3.1.0'
+  gem 'rspec-activemodel-mocks'
+  gem 'webmock'
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
+  gem 'capybara'
 end
