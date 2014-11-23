@@ -1,27 +1,28 @@
-= simple_form_for @new_config, defaults: { input_html: { class: 'form-control' } } do |f|
-  fieldset
-    legend Insert your configuration
-    - if @new_config.errors.any?
-      .alert.alert-danger
-        h2 Form is invalid
-        ul
-          - @new_config.errors.full_messages.each do |msg|
-            li= msd
+.well
+  = simple_form_for @new_config, defaults: { input_html: { class: 'form-control' } } do |f|
+    fieldset
+      legend Insert your configuration
+      - if @new_config.errors.any?
+        .alert.alert-danger
+          h2 Form is invalid
+          ul
+            - @new_config.errors.full_messages.each do |msg|
+              li= msd
 
-    .form-group
-      = f.label :name, class: 'control-label'
-      = f.text_field :name, class: 'form-control'
+      .form-group
+        = f.label :name, class: 'control-label'
+        = f.text_field :name, class: 'form-control'
 
-    .form-group
-      = country_select('app_config', 'country')
+      .form-group
+        = country_select('app_config', 'country')
 
-    .form-group
-      = f.input :language, collection: ['en', 'ru', 'it', 'es', 'sp', 'uk', 'ua', 'de', 'pt',
-                                        'ro', 'pl', 'fi', 'nl', 'fr', 'bg', 'sv', 'se', 'zh_tw',
-                                        'zh', 'tr', 'hr', 'ca']
+      .form-group
+        = f.input :language, collection: ['en', 'ru', 'it', 'es', 'sp', 'uk', 'ua', 'de', 'pt',
+                                          'ro', 'pl', 'fi', 'nl', 'fr', 'bg', 'sv', 'se', 'zh_tw',
+                                          'zh', 'tr', 'hr', 'ca']
 
-    .form-group
-      = f.input :units, collection: ['metric', 'imperial', 'internal']
+      .form-group
+        = f.input :units, collection: ['metric', 'imperial', 'internal']
 
-    .actions
-      = f.submit 'Save', class: 'btn btn-primary'
+      .actions
+        = f.submit 'Save', class: 'btn btn-primary'
