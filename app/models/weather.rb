@@ -14,7 +14,7 @@ class Weather
   end
 
   def temp
-    t = @ow['main']['temp'].to_s
+    t = @ow['main']['temp'].round(1).to_s
 
     if units == 'metric'
       t + '°C'
