@@ -69,8 +69,6 @@ class Weather
     map = GoogleStaticMap.new(zoom: 11, center: location)
     map.markers << MapMarker.new(icon: icon, location: location)
     image_url = map.url(:auto)
-
-    return image_url
   end
 
   private
